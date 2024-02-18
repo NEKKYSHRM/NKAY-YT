@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="animateString('text')">
+    <p id="text">Hacker</p>
+
+    <script>
+        function animateString(id) {
+            const element = document.getElementById(id)
+            const textNode = element.childNodes[0]
+            var txt = textNode.data
+
+            setInterval(function() {
+                txt = txt[txt.length - 1] + txt.substring(0, txt.length - 1)
+                textNode.data = txt
+            }, 100)
+        }
+    </script>
+</body>
+</html>
